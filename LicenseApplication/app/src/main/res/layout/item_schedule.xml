@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="schedule"
+            type="ExamScheduleItem" />
+
+        <import type="com.bellacorp.licenseapplication.main.model.ExamScheduleItem"/>
+    </data>
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+
+        android:stretchColumns="*">
+        <TableRow
+            android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="회차"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.description ?? `-`}"
+                android:layout_span="2"
+                />
+        </TableRow>
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="필기시험 원서접수"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.docRegStartDt ?? `-` }"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.docRegEndDt ?? `-` }"
+                />
+        </TableRow>
+
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="필기시험일자"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:background="@drawable/shape_border"
+                android:layout_weight="1"
+                app:text="@{schedule.docExamDt ?? `-`}"
+                android:layout_span="2"
+                />
+        </TableRow>
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="필기시험 합격(예정)자\n발표일자"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.docPassDt ?? `-`}"
+                android:layout_span="2"
+                />
+        </TableRow>
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="응시자격 서류제출 및\n 필기시험 합격자 결정일자"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                android:gravity="center_vertical"
+                app:text="@{schedule.docSubmitStartDt ?? `-`}"
+                />
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                android:gravity="center_vertical"
+                app:text="@{schedule.docSubmitEntDt ?? `-`}"
+                />
+        </TableRow>
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="실기시험원서접수일자"
+                android:background="@drawable/shape_border"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.pracRegStartDt ?? ``}" />
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:layout_weight="1"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.pracRegEndDt ?? `-`}"
+                />
+        </TableRow>
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="실기시험시작일자"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="20140207"
+                android:layout_weight="1"
+                app:text="@{schedule.pracExamStartDt ?? `-`}"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="20140207"
+                app:text="@{schedule.pracExamEndDt ?? `-`}"
+                />
+        </TableRow>
+        <TableRow android:background="@drawable/shape_border">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_border"
+                android:text="합격자발표일자"
+                />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20140207"
+                android:background="@drawable/shape_border"
+                app:text="@{schedule.pracPassDt ?? `-`}"
+                android:layout_span="2"
+                />
+        </TableRow>
+    </TableLayout>
+</layout>

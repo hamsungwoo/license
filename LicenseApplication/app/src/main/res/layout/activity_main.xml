@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="view"
+            type="com.bellacorp.licenseapplication.main.MainActivity" />
+
+        <variable
+            name="vm"
+            type="com.bellacorp.licenseapplication.main.MainViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context=".main.MainActivity">
+
+<!--        <androidx.appcompat.widget.SearchView-->
+<!--            android:id="@+id/sv_search"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            search_listener="@{view.searchQuery}"-->
+<!--            close_listener="@{view.closeListener}"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            />-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_result_name"
+            android:layout_marginTop="10dp"
+            license_list="@{vm.licenseItems}"
+            item_click_listener="@{view.licenseClickListener}"
+            search_text="@{vm.searchText}"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
